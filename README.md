@@ -1,5 +1,6 @@
 # Encode-Password AHK
 Dynamic Password from Reddit Post
+
 Uses F1 to encode a password and F2 to decode the password and send it to the active window. 
 
 Reddit Link:  https://www.reddit.com/r/AutoHotkey/comments/10o18my/i_need_to_remap_a_key_each_day_for_a_dynamically/
