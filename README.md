@@ -1,4 +1,4 @@
-# Encode-Password
+# Encode-Password AHK
 Dynamic Password from Reddit Post
 
 Reddit Link:  https://www.reddit.com/r/AutoHotkey/comments/10o18my/i_need_to_remap_a_key_each_day_for_a_dynamically/
