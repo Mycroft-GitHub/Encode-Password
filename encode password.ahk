@@ -69,7 +69,7 @@ return
 F2::									;	Hotkey to retrive and decrypt current password.
 IniRead, Encoded, %settings_ini%, Dynamic
 Password := Decrypt(Encoded,Constant)
-MsgBox, % "----- Encoded Password ----- `n" Encoded "`n`n----- Decoded Password ----- `n" Password "`n`nNOTE:  The decoded password will sent to the active Window.  Remove this message box when you no longer want to see it."
+MsgBox, % "----- Encoded Password ----- `n" Encoded "`n`n----- Decoded Password ----- `n" Password "`n`nNOTE:  The decoded password will be sent to the active Window.  Remove this message box when you no longer want to see it."
 Send, % Password
 return
 
