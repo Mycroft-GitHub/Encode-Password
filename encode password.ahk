@@ -14,20 +14,20 @@ Last Updated:  January 29, 2023 5:45 AM
 =============================================================
 */
 
-#SingleInstance, Force										;	Limit on running version of this script.
-#NoEnv																;	Avoids checking empty variables to see if they are environment variables.
-#Requires AutoHotkey v1.1.33+						;	Displays an error and quits if a version requirement is not met.
-SetWorkingDir %A_ScriptDir%							;	Ensures a consistent starting directory for the location of this script.
-Menu, Tray, Icon, shell32.dll, 45							;	Tray Icon selection.
+#SingleInstance, Force						;	Limit on running version of this script.
+#NoEnv								;	Avoids checking empty variables to see if they are environment variables.
+#Requires AutoHotkey v1.1.33+					;	Displays an error and quits if a version requirement is not met.
+SetWorkingDir %A_ScriptDir%					;	Ensures a consistent starting directory for the location of this script.
+Menu, Tray, Icon, shell32.dll, 45				;	Tray Icon selection.
 
-ini_folder := A_ScriptDir . "\Settings"					;	INI stored in Settings folder
+ini_folder := A_ScriptDir . "\Settings"				;	INI stored in Settings folder
 settings_ini = %ini_folder%\dynamic.ini				;	INI path and file name
 
-Constant:="51239946"										; Change this value to any numeric value you want for password encoding.
+Constant:="51239946"						;	Change this value to any numeric value you want for password encoding.
 
 
 ; =============================================================
-F1::																		;	Hotkey to encode new password.
+F1::								;	Hotkey to encode new password.
 ; ********************  Encode  ********************
 	InputBox, Pass, Encode,Dynamic Password to encode?,,400,150
 	if ErrorLevel
@@ -59,10 +59,10 @@ Decrypt(OutputVar,Constant){
 }
 
 Dynamic:
-	If !FileExist(ini_folder) {  										;	Verify ini folder path exists, create if not
+	If !FileExist(ini_folder) {  					;	Verify ini folder path exists, create if not
         FileCreateDir, %ini_folder%
     }
-    IniWrite, %Encoded%, %settings_ini% , Dynamic, ;	Write encoded password to the INI file.
+    IniWrite, %Encoded%, %settings_ini% , Dynamic, 			;	Write encoded password to the INI file.
 return
 
 ; =============================================================
@@ -73,4 +73,4 @@ MsgBox, % "----- Encoded Password ----- `n" Encoded "`n`n----- Decoded Password 
 Send, % Password
 return
 
-!esc::ExitApp																;	[Alt]+[Esc] to exit the app
+!esc::ExitApp								;	[Alt]+[Esc] to exit the app
